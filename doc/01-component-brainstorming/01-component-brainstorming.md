@@ -1,8 +1,8 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Armaani Sheth
+- **Dot Number**: sheth.116
+- **Due Date**: 2/6 @ 12:40pm
 
 ## Assignment Overview
 
@@ -211,68 +211,85 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Music Playlist
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Allows for the organization and sorting of songs in a music playlist. 
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addSong(String song) --> add a song to the playlist
+    - String removeSong() --> removes a song from the playlist and returns the title
+    - int size() --> returns the size of the playlist
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - Map<String, String> album() --> returns all the songs of an artist on the playlist
+    - String singer() --> returns the singer of the song
+    - boolean contains(String artist) --> determines if a specific artist is within the playlist
+    - void shuffle() --> changes the organization of the playlist
+    - Map<String, String> genre(String g) --> returns all the songs that fit a specific genre 
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the playlist songs can be added or removed.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, it would use Map to match the artist and songs or a Set to store the song names and title
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, I can remove the songs, store them, and add them back in a random order for shuffle
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: Book Store Inventory
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Models an inventory for a book store.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addItem(String item) --> add an item to the "store"
+    - String removeItem() --> remove item from the "store" inventory
+    - int total() --> total number of inventory items
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - String title() --> returns the item title
+    - boolean contains(String title) --> returns if the "store" contains a title
+    - int price(String title) --> identifies the price of an item
+    - int total() --> number of items in the catalog
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, would most likely use a Map to add items and remove them with titles and pricing, maybe a Sequence
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, Map or Sequence
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, I can removeItem to get a peak of the title
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: Data Table
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Organizes data for manipulation using integers
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - int removeData() --> remove the data from the table
+    - void addData(int d) --> add data to the table
+    - Queue<Integer> size() --> dimensions of data table
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - int add(int num, int num2) --> returns two added values
+    - int subtract(int num, int num2) --> returns two subtracted values
+    - int multiply(int num, int num2) --> returns two multiply values
+      - int divide(int num, int num2) --> returns two divided values 
+
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, to add data and remove data from the table
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, Queues to hold data entries
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know 
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, 
 
 ## Post-Assignment
 

@@ -102,9 +102,11 @@ public class MusicPlaylist {
         }
 
         int numberOfSongs = playlist.length();
+        out.println("Your playlist has " + numberOfSongs + " number of songs");
 
         if (numberOfSongs > 0) {
-            playlist.remove("Take Too Much");
+            Map.Pair<String, String> removed = playlist.remove("Talk Too Much");
+            out.println(removed.key() + " by " + removed.value() + "was removed");
         }
         out.close();
     }

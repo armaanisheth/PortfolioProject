@@ -21,7 +21,8 @@
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "c:\\Users\\armaa\\Downloads\\components (1).jar"
     ],
     "java.saveActions.cleanup": true,
     "java.cleanup.actions": [

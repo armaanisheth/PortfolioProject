@@ -196,11 +196,11 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
-- Designed kernel and enhanced interfaces for <!-- insert name of component here --> component
+- Designed kernel and enhanced interfaces for MusicPlaylist component
 
 ### Updated
 
-- Changed design to include ...
+- Changed design to include method contracts and potential implementation of secondary method
 
 ```
 

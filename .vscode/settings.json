@@ -21,8 +21,7 @@
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ],
+        "lib/**/*.jar"],
     "java.saveActions.cleanup": true,
     "java.cleanup.actions": [
         "qualifyMembers",

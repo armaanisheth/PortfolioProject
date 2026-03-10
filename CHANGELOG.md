@@ -44,3 +44,4 @@ the following form: YYYY.0M.0D.
 
 - Changed design to include method contracts for kernel and secondary methods
 - Changed original proof-of-concept to a new potential implementation with the inclusion of a secondary method
+- Settings is changed, library is accessible to all users instead a direct path

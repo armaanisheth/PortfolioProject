@@ -43,4 +43,11 @@ public interface MusicPlaylist extends Comparable<MusicPlaylist>, MusicPlaylistK
      */
     boolean contains(String artist);
 
+    /**
+     * Not sure yet but might add a few more methods in the future such as
+     * the ability to name your playlist or other methods. I think there is a lot
+     * more potential for the component's capabilities.
+     * This is just an initial rough draft.
+     */
+
 }

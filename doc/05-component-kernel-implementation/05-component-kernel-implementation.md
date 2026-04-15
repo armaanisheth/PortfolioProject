@@ -1,9 +1,8 @@
 # Portfolio Part 5: Kernel Implementation
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
-
+- **Name**: Armaani Sheth
+- **Dot Number**: sheth.116
+- **Due Date**: 4/15 @ 12:40pm
 ## Assignment Overview
 
 At this point in the portfolio project, the only thing left as far as
@@ -39,8 +38,6 @@ of the file. Feel free to reference any of your kernel implementations for
 examples of these.
 
 ## Assignment Checklist
-
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -120,7 +117,9 @@ Below is further rationale/explanation for the rubric items above:
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
-<!-- TODO: select a representation and explain why -->
+For my representation, I will use a map. Though a queue could work for a basic playlist representation, I believe the map provides interesting features. For example, you can have a song and it's associated artist. This can replicate a feature similar to Spotify where when you search an artist all the songs by that artist are pulled from your playlist.
+
+Therefore, a map provides an easy data structure to manipulate and will have both the key and value be strings. The key will be the artist and the value will be all songs from that playlist with that artist. 
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to
@@ -141,8 +140,6 @@ Below is further rationale/explanation for the rubric items above:
 > to see them. If you don't like this workflow, you may try following the
 > rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 > and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 

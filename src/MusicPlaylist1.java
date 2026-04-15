@@ -4,6 +4,13 @@ import components.set.Set;
 import components.set.Set1L;
 
 /**
+ * @convention
+ * [$this.playlist is not null]
+ * [every String key contained in this.playlist is not ""]
+ * [every Set<String> value contained in this.playlist > 0]
+ *
+ * @correspondance
+ * [this.playlist is a map with at least one pair with String key and Set<String> value]
  * @author Armaani Sheth.116
  */
 public class MusicPlaylist1 extends MusicPlaylistSecondary {

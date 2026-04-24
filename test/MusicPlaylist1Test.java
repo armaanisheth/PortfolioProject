@@ -1,5 +1,5 @@
-import components.musicplaylist.MusicPlaylist;
-import components.musicplaylist.MusicPlaylist1;
+import musicplaylist_components.musicplaylist.MusicPlaylist;
+import musicplaylist_components.musicplaylist.MusicPlaylist1;
 
 /**
  * JUnit test for music playlist test.

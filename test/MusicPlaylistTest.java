@@ -2,6 +2,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import components.map.Map;
+import components.sequence.Sequence;
+import components.sequence.Sequence1L;
 
 /**
  * JUnit test fixture for {@code MusicPlaylist}'s constructor and kernel
@@ -292,5 +294,37 @@ public abstract class MusicPlaylistTest {
         boolean c = m.contains("Is It True");
         assertEquals(false, c);
     }
+
+    /**
+     * Test artistSongs one song.
+     */
+    @Test
+    public void testArtistSongsOne() {
+        MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
+        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
+        Sequence<String> s = m.artistSongs("Tame Impala");
+        Sequence<String> s2 = new Sequence1L<String>();
+        s2.add("My Old Ways");
+        assertEquals(s, s2);
+    }
+
+    /**
+     * Test artistSongs multiple song.
+     */
+    @Test
+    public void testArtistSongsMultiple() {
+        MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
+        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?", "Tame Impala",
+         "Breathe Deeper", "Tame Impala", "Is It True");
+        Sequence<String> s = m.artistSongs("Tame Impala");
+        Sequence<String> s2 = new Sequence1L<String>();
+        s2.add("My Old Ways");
+        s2.add("Is It True");
+        s2.add("Breathe Deeper");
+        assertEquals(s, s2);
+    }
+
+
+
 
 }

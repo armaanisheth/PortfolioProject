@@ -4,6 +4,7 @@ import org.junit.Test;
 import components.map.Map;
 import components.sequence.Sequence;
 import components.sequence.Sequence1L;
+import musicplaylist_components.MusicPlaylist;
 
 /**
  * JUnit test fixture for {@code MusicPlaylist}'s constructor and kernel
@@ -239,10 +240,23 @@ public abstract class MusicPlaylistTest {
     }
 
     /**
-     * Test shuffle.
+     * Test shuffle with one.
      */
     @Test
-    public void shuffle() {
+    public void shuffleOne() {
+        MusicPlaylist m = this.createFromArgsTest("Wallows", "Are You Bored Yet?");
+        int length = m.length();
+        m.shuffle();
+        int newLength = m.length();
+        assertEquals(length, newLength);
+        assertTrue(m.contains("Are You Bored Yet?"));
+    }
+
+    /**
+     * Test shuffle with multiple.
+     */
+    @Test
+    public void shuffleMultiple() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
         "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
         int length = m.length();

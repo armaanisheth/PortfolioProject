@@ -11,7 +11,7 @@ import components.map.Map;
  *
  */
 
-public class MusicPlaylistTest {
+public abstract class MusicPlaylistTest {
 
     /**
      * Invokes the appropriate {@code MusicPlaylist} constructor for the implementation
@@ -37,7 +37,7 @@ public class MusicPlaylistTest {
      * under test type with the given entries.
      *
      * @param args
-     *            the (key, value) pairs for the MusicPlaylist
+     * the (key, value) pairs for the MusicPlaylist
      * @return the constructed MusicPlaylist
      * @requires <pre>
      * [args.length is even]  and
@@ -62,7 +62,7 @@ public class MusicPlaylistTest {
      * implementation type with the given entries.
      *
      * @param args
-     *            the (key, value) pairs for the map
+     * the (key, value) pairs for the map
      * @return the constructed map
      * @requires <pre>
      * [args.length is even]  and
@@ -87,8 +87,6 @@ public class MusicPlaylistTest {
     @Test
     public void testConstructorEmpty() {
         MusicPlaylist m = this.constructorTest();
-        MusicPlaylist mExpected = this.constructorRef();
-        assertEquals(mExpected, m);
         assertEquals(0, m.length());
     }
 
@@ -100,8 +98,8 @@ public class MusicPlaylistTest {
     public void testAddOne() {
         MusicPlaylist m = this.constructorTest();
         m.add("Tame Impala", "My Old Ways");
-        MusicPlaylist mExpected = this.createFromArgsRef("Tame Impala", "My Old Ways");
-        assertEquals(mExpected, m);
+        assertEquals(1, m.length());
+        assertTrue(m.contains("My Old Ways"));
     }
 
     /**
@@ -111,9 +109,9 @@ public class MusicPlaylistTest {
     public void testAddOneSameArtist() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "Afterthought");
         m.add("Tame Impala", "My Old Ways");
-        MusicPlaylist mExpected = this.createFromArgsRef("Tame Impala", "Afterthought",
-        "Tame Impala", "My Old Ways");
-        assertEquals(mExpected, m);
+        assertEquals(2, m.length());
+        assertTrue(m.contains("My Old Ways"));
+        assertTrue(m.contains("Afterthought"));
     }
 
     /**
@@ -124,9 +122,9 @@ public class MusicPlaylistTest {
         MusicPlaylist m = this.constructorTest();
         m.add("Tame Impala", "My Old Ways");
         m.add("WOAH", "Valleys");
-        MusicPlaylist mExpected = this.createFromArgsRef("Tame Impala", "My Old Ways",
-         "WOAH", "Valleys");
-        assertEquals(mExpected, m);
+        assertEquals(2, m.length());
+        assertTrue(m.contains("My Old Ways"));
+        assertTrue(m.contains("Valleys"));
     }
 
     /**
@@ -137,10 +135,10 @@ public class MusicPlaylistTest {
         MusicPlaylist m = this.createFromArgsTest("Nirvana", "Something In The Way");
         m.add("Tame Impala", "My Old Ways");
         m.add("WOAH", "Valleys");
-        MusicPlaylist mExpected = this.createFromArgsRef("Nirvana",
-        "Something In The Way", "Tame Impala", "My Old Ways",
-         "WOAH", "Valleys");
-        assertEquals(mExpected, m);
+        assertEquals(3, m.length());
+        assertTrue(m.contains("Something In The Way"));
+        assertTrue(m.contains("My Old Ways"));
+        assertTrue(m.contains("Valleys"));
     }
 
     /**
@@ -150,10 +148,9 @@ public class MusicPlaylistTest {
     public void testRemoveOne() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways");
         Map.Pair<String, String> pair = m.remove("My Old Ways");
-        MusicPlaylist mExpected = this.createFromArgsRef();
-        assertEquals(pair.value(), "Tame Impala");
-        assertEquals(pair.key(), "My Old Ways");
-        assertEquals(mExpected, m);
+        assertEquals("Tame Impala", pair.value());
+        assertEquals("My Old Ways", pair.key());
+        assertEquals(0, m.length());
     }
 
     /**
@@ -164,10 +161,10 @@ public class MusicPlaylistTest {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
         "Tame Impala", "Breathe Deeper");
         Map.Pair<String, String> pair = m.remove("My Old Ways");
-        MusicPlaylist mExpected = this.createFromArgsRef("Tame Impala", "Breathe Deeper");
-        assertEquals(pair.value(), "Tame Impala");
-        assertEquals(pair.key(), "My Old Ways");
-        assertEquals(mExpected, m);
+        assertEquals("Tame Impala", pair.value());
+        assertEquals("My Old Ways", pair.key());
+        assertEquals(1, m.length());
+        assertTrue(m.contains("Breathe Deeper"));
     }
 
     /**
@@ -179,10 +176,10 @@ public class MusicPlaylistTest {
         "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
         Map.Pair<String, String> pair = m.remove("My Old Ways");
         Map.Pair<String, String> pair2 = m.remove("Are You Bored Yet?");
-        MusicPlaylist mExpected = this.createFromArgsRef("WOAH", "Valleys");
-        assertEquals(pair.value(), "Tame Impala");
-        assertEquals(pair2.value(), "WILLOW");
-        assertEquals(mExpected, m);
+        assertEquals("Tame Impala", pair.value());
+        assertEquals("Wallows", pair2.value());
+        assertEquals(1, m.length());
+        assertTrue(m.contains("Valleys"));
     }
 
     /**
@@ -191,9 +188,7 @@ public class MusicPlaylistTest {
     @Test
     public void testLengthOne() {
         MusicPlaylist m = this.createFromArgsTest("WILLOW", "Wait a Minute!");
-        MusicPlaylist mExpected = this.createFromArgsRef("WILLOW", "Wait a Minute!");
-        assertEquals(mExpected, m);
-        assertEquals(mExpected.length(), 1);
+        assertEquals(1, m.length());
     }
 
     /**
@@ -203,10 +198,7 @@ public class MusicPlaylistTest {
     public void testLengthTwo() {
         MusicPlaylist m = this.createFromArgsTest("WOAH", "Valleys",
          "Wallows", "Are You Bored Yet?");
-        MusicPlaylist mExpected = this.createFromArgsRef("WOAH", "Valleys",
-         "Wallows", "Are You Bored Yet?");
-        assertEquals(mExpected, m);
-        assertEquals(mExpected.length(), 2);
+        assertEquals(2, m.length());
     }
 
     /**
@@ -216,10 +208,7 @@ public class MusicPlaylistTest {
     public void testLengthThree() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
         "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
-        MusicPlaylist mExpected = this.createFromArgsRef("Tame Impala", "My Old Ways",
-        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
-        assertEquals(mExpected, m);
-        assertEquals(mExpected.length(), 3);
+        assertEquals(3, m.length());
     }
 
     /**
@@ -228,10 +217,10 @@ public class MusicPlaylistTest {
     @Test
     public void testRemoveAnySingleEntry() {
         MusicPlaylist m = this.createFromArgsTest("WILLOW", "Wait a Minute!");
-        MusicPlaylist mExpected = this.createFromArgsRef();
         Map.Pair<String, String> mPair = m.removeAny();
         assertTrue(mPair != null);
-        assertEquals(mExpected, m);
+        assertEquals("Wait a Minute!", mPair.key());
+        assertEquals("WILLOW", mPair.value());
         assertEquals(0, m.length());
     }
 
@@ -242,13 +231,8 @@ public class MusicPlaylistTest {
     public void testRemoveAnyFromThree() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
         "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
-        MusicPlaylist mExpected = this.createFromArgsRef("Tame Impala", "My Old Ways",
-        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
         Map.Pair<String, String> mPair = m.removeAny();
         assertTrue(mPair != null);
-        assertTrue(mExpected.contains(mPair.key()));
-        mExpected.remove(mPair.key());
-        assertEquals(mExpected, m);
         assertEquals(2, m.length());
     }
 

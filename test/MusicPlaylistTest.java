@@ -236,4 +236,61 @@ public abstract class MusicPlaylistTest {
         assertEquals(2, m.length());
     }
 
+    /**
+     * Test shuffle.
+     */
+    @Test
+    public void shuffle() {
+        MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
+        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
+        MusicPlaylist m2 = new MusicPlaylist1();
+        for (Map.Pair<String, Integer> pair: m) {
+            m2.add(pair.value(), pair.key());
+        }
+        m.shuffle();
+        assertEquals(m, m2);
+    }
+
+    /**
+     * Test contains with one element.
+     */
+    @Test
+    public void testContainsOne() {
+        MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways");
+        boolean c = m.contains("My Old Ways");
+        assertEquals(true, c);
+    }
+
+    /**
+     * Test contains with one element false.
+     */
+    @Test
+    public void testContainsOneFalse() {
+        MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways");
+        boolean c = m.contains("Afterthought");
+        assertEquals(false, c);
+    }
+
+    /**
+     * Test contains with multiple elements.
+     */
+    @Test
+    public void testContainsMultiple() {
+        MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
+        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
+        boolean c = m.contains("Valleys");
+        assertEquals(true, c);
+    }
+
+    /**
+     * Test contains with multiple elements false.
+     */
+    @Test
+    public void testContainsMultipleFalse() {
+        MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
+        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
+        boolean c = m.contains("Is It True");
+        assertEquals(false, c);
+    }
+
 }

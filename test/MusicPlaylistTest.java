@@ -245,12 +245,13 @@ public abstract class MusicPlaylistTest {
     public void shuffle() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
         "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
-        MusicPlaylist m2 = new MusicPlaylist1();
-        for (Map.Pair<String, Integer> pair: m) {
-            m2.add(pair.value(), pair.key());
-        }
+        int length = m.length();
         m.shuffle();
-        assertEquals(m, m2);
+        int newLength = m.length();
+        assertEquals(length, newLength);
+        assertTrue(m.contains("My Old Ways"));
+        assertTrue(m.contains("Valleys"));
+        assertTrue(m.contains("Are You Bored Yet?"));
     }
 
     /**
@@ -259,8 +260,10 @@ public abstract class MusicPlaylistTest {
     @Test
     public void testContainsOne() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways");
+        MusicPlaylist mExpected = this.createFromArgsTest("Tame Impala", "My Old Ways");
         boolean c = m.contains("My Old Ways");
         assertEquals(true, c);
+        assertEquals(mExpected, m);
     }
 
     /**
@@ -269,7 +272,9 @@ public abstract class MusicPlaylistTest {
     @Test
     public void testContainsOneFalse() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways");
+        MusicPlaylist mExpected = this.createFromArgsTest("Tame Impala", "My Old Ways");
         boolean c = m.contains("Afterthought");
+        assertEquals(mExpected, m);
         assertEquals(false, c);
     }
 
@@ -280,8 +285,11 @@ public abstract class MusicPlaylistTest {
     public void testContainsMultiple() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
         "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
+        MusicPlaylist mExpected = this.createFromArgsTest("Tame Impala", "My Old Ways",
+        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
         boolean c = m.contains("Valleys");
         assertEquals(true, c);
+        assertEquals(mExpected, m);
     }
 
     /**
@@ -291,8 +299,11 @@ public abstract class MusicPlaylistTest {
     public void testContainsMultipleFalse() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
         "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
+        MusicPlaylist mExpected = this.createFromArgsTest("Tame Impala", "My Old Ways",
+        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
         boolean c = m.contains("Is It True");
         assertEquals(false, c);
+        assertEquals(mExpected, m);
     }
 
     /**
@@ -302,10 +313,13 @@ public abstract class MusicPlaylistTest {
     public void testArtistSongsOne() {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
         "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
+        MusicPlaylist mExpected = this.createFromArgsTest("Tame Impala", "My Old Ways",
+        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?");
         Sequence<String> s = m.artistSongs("Tame Impala");
         Sequence<String> s2 = new Sequence1L<String>();
         s2.add("My Old Ways");
         assertEquals(s, s2);
+        assertEquals(mExpected, m);
     }
 
     /**
@@ -316,12 +330,16 @@ public abstract class MusicPlaylistTest {
         MusicPlaylist m = this.createFromArgsTest("Tame Impala", "My Old Ways",
         "WOAH", "Valleys", "Wallows", "Are You Bored Yet?", "Tame Impala",
          "Breathe Deeper", "Tame Impala", "Is It True");
+        MusicPlaylist mExpected = this.createFromArgsTest("Tame Impala", "My Old Ways",
+        "WOAH", "Valleys", "Wallows", "Are You Bored Yet?", "Tame Impala",
+         "Breathe Deeper", "Tame Impala", "Is It True");
         Sequence<String> s = m.artistSongs("Tame Impala");
         Sequence<String> s2 = new Sequence1L<String>();
         s2.add("My Old Ways");
         s2.add("Is It True");
         s2.add("Breathe Deeper");
         assertEquals(s, s2);
+        assertEquals(mExpected, m);
     }
 
 

@@ -1,7 +1,6 @@
 import components.map.Map;
 import components.map.Map1L;
 import components.simplewriter.SimpleWriter;
-import components.simplewriter.SimpleWriter1;
 import components.simplewriter.SimpleWriter1L;
 /**
  * Music app example.

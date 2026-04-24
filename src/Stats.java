@@ -56,10 +56,14 @@ public class Stats {
      *            duration of the song
      */
     public void updatedSongStats(String song, float length) {
-       Map.Pair<String, Integer> c = this.playCounts.remove(song);
-       int count = c.value() + 1;
-       this.playCounts.add(song, count);
-       this.totalListeningTime += length;
+        int count = 0;
+        if (this.playCounts.hasKey(song)) {
+            count = this.playCounts.value(song);
+            this.playCounts.replaceValue(song, count + 1);
+        } else {
+            this.playCounts.add(song, 1);
+        }
+        this.totalListeningTime += length;
     }
 
     /**

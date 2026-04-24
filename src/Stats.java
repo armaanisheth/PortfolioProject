@@ -67,8 +67,8 @@ public class Stats {
      */
     public void printStats() {
        SimpleWriter out = new SimpleWriter1L();
-       out.println("You have spent a total of " + totalListeningTime +
-       " listening to this playlist: ");
+       out.println("You have spent a total of " + totalListeningTime
+       + " listening to this playlist: ");
        for (Map.Pair<String, Integer> pair: this.playCounts) {
             out.println("Song: " + pair.key() + " was played " + pair.value() + " times");
        }

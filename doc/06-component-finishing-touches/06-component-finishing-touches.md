@@ -1,8 +1,8 @@
 # Portfolio Part 6: Finishing Touches
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Armaani Sheth
+- **Dot Number**: sheth.116
+- **Due Date**: 4/24 @ 12:40pm
 
 ## Assignment Overview
 
@@ -140,8 +140,6 @@ merges, you will need to pull the changes from main into your current branch
 to see them. If you don't like this workflow, you may try following the
 rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
@@ -307,18 +305,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+I liked trying the project out. I think it helped me understand methods we don't use very often like equals, toSting, and hashCode. It also made me think about contracts more allowing me to understand what really goes behind a componenet. I enjoyed thinking of ways to implement my class and coming up with use cases.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+Yes, it helped me understand how to write contracts. I think reading them is much easier than writing. I looked at examples from the OSU API to create them.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+Software development is still something I enjoy. I think personally implementing efficient solutions can be difficult. Therefore, when I get code to work it's really satisfying. I still think I'm on a pretty big learning curve. I really enjoy things when I understand them deeply and can build off that knowledge. I think since software development is so intricate with so many parts, and a bit fast-paced, I would really like to review my software 1 and 2 skills throughout the summer. I think review and practice will not only make me feel like a really strong coder, it'll make the entire process more enjoyable.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -326,29 +324,30 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+Contract reading and writing, use case brainstorming, and one of the newer ones was testing without references.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+- Can read and produce clean documentation and client contracts.
+- Implemented JUnit testing without designated references.
+- Learned to create and design several use case classes.
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+This did not make me hate or love my future career trajectory. The specific topic I chose to implement is just something I enjoy and think would be fun. I actually think this a playlist through software is really cool to think about with big platforms like Spotify and Apple Music. I'd honestly be curious to learn more for fun, though probably not for my career.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+I think one thing that interests me is using AI and technology for more advanced healthcare. I really enjoy both and would love to develop solutions to illnesses and medical practices. One of the professors that could help me is Rajiv Ramnath. I am going to do research with him this summer which could definitely be helpful and interesting!
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -383,8 +382,6 @@ like to accomplish that, you will need to make GitHub releases after each pull
 request merge (or at least tag your commits). This is not required.
 
 ### Submission
-
-<!-- TODO: read the submission instructions then delete this comment -->
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull
